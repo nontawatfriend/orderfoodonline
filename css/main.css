@@ -1,0 +1,596 @@
+* {
+	box-sizing: border-box;
+}
+hr{
+	border: 1;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(1, 1, 1, 0.08), rgba(0, 0, 0, 0));
+}
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover{
+    color: rgb(255, 255, 255);
+    cursor: default;
+    background-color: #2d3d51;
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom-color: transparent;
+}
+.nav-tabs {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+body {
+	margin: 0;
+	padding: 0;
+	/* font-family: 'Kanit Regular', 'Kanit'; */
+	font-family: 'Mali', cursive;
+	background-color: #d5dae5;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+.draggable-container {
+  overflow: hidden;
+  /* no selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.draggable {
+  width: 9999999px;
+  white-space: nowrap; /* all on same line เมนูสไลลค์ยาวไปขวา*/
+  font-size: 0; /* fix inline block spacing */
+}
+.draggable.nav > li > a  {
+  font-size: 14px; /* give font size to links */
+}
+
+/* visual styles */
+
+h1 {
+  margin: 40px 0px 20px 0px;
+  /* color: #95c500; */
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+}
+.draggable-container {
+  padding: 10px 0px;
+  /* border: 1px solid #000000; */
+}
+/* logo in header(mobile version) and side-nav (tablet & desktop) */
+.header_id {
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+	height: 44px;
+	background-color:#2d3d51;
+	border-bottom: 3px solid#fff;
+	
+}
+.header_name {
+	position: absolute;
+	margin-top: 44px;
+	width: 100%;
+	z-index: 3;
+	height: 44px;
+	background-color:#2d3d51 ;
+	border-bottom: 3px solid#fff;
+	
+}
+.namesid {
+	margin-top: 10px;
+	color: red;
+	text-align: center;
+	font-size: 20px;
+}
+.namestore {
+	margin-top: 10px;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+}
+.main-content {
+	padding: 40px;
+	margin-top: 0;
+	padding: 0;
+	padding-top: 88px;
+	height: 100%;
+	/* overflow: scroll; */
+}
+
+	/* product อาหาร tablet & desktop*/
+	.product-collection{
+		margin-top: 1rem;
+	}
+	.product-item form{
+		display: grid;
+		grid-template-columns: 100%;
+		/* border-bottom: 1px solid #efefef; */
+		border: 1px solid #efefef;/* กรอบฟอร์ม */
+		margin-bottom: 1rem;
+		border-radius: 7px 7px 0px 0px;
+		box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2),
+					inset -1px -1px 1px #efefef; /* อันนี้ทำให้กรอบเป็นหลุม */
+		/* box-shadow:  2px 2px 2px rgba(0,0,0,0.2),
+					 -2px -2px 2px #efefef; อันนี้ทำให้กรอบนูน*/
+	}
+	.product-product{
+		display: grid;
+		grid-template-columns: 180px auto;
+		grid-gap: 0rem 1.3rem;
+		padding: 1rem 1rem; /* ขยับออกขวา */
+		border-bottom: 1px solid #efefef; /* ขีดเส้นล่าง */
+	}
+	.product-image{
+		height: 75px;
+		border-radius: 7px;
+		/* background-size: cover;
+		background-repeat: no-repeat; */
+	}
+	.product-quantity-md,
+	.product-unit-price,
+	.product-product-total{
+		display: none;
+	}
+	.product-controls-sm{
+		align-items: center; /* จัดให้อยู่ตรงกรอบ */
+		margin-left: auto;
+		/* margin-left: 45%; */ /* ชิดซ้าย */
+		/* float: right; */
+		display: flex;
+		justify-content: space-between;
+		padding: .5rem;
+		padding: 1rem 1rem;
+		border-bottom: 1px solid #efefef; /* ขีดเส้นล่าง */
+	}
+	.product-quantity-controls-sm
+	.product-quantity-controls{
+		display: flex;
+	}
+	.product-quantity-controls-sm button,
+	.product-quantity-controls-sm input,
+	.product-quantity-controls button
+	{ /* product-quantity-controls input ของปุ่ม input จำนวน */
+		height: 30px;
+		width: 30px;
+		border: none;
+		outline: none;
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.1rem;
+		color: #505050;
+		margin-left: .3rem;
+	}
+	.product-quantity-controls input,
+	.product-quantity-controls-sm input{ /*ของปุ่ม input จำนวน */
+		height: 30px;
+		width: 50px;
+		border: none;
+		outline: none;
+		text-align: center;
+		font-weight: bold;
+		font-size: 14px;
+		color: #505050;
+		margin-left: .3rem;
+	}
+	.product-quantity-controls-sm button,
+	.product-quantity-controls button{ 
+		/* background: var(--mainColor); */ /* เดิม */
+		background: #333;
+		color: #fff;
+		border-radius: 25%;
+	}
+	.product-product-name{
+		font-weight: bold;
+		color: #505050;
+		margin-bottom: .3rem;
+		font-size: 20px;
+	}
+	.product-price-sm{
+		/* color: var(--mainColor); */ /* สีดั้งเดิม */
+		color: #2d3d51;
+		font-weight: bold;
+		margin-bottom: .3rem;
+		font-size: 18px;
+	}
+	.product-product-info small{
+		font-weight: bold;
+		color: #333;
+		font-size: 16px;
+	}
+	.product-total-holder{
+		margin-top: 2rem;
+	}
+	.product-total{
+		margin-bottom: 1rem;
+		display: flex; /* ทำให้ขึ้นมาบรรทัดเดียวกัน */
+		justify-content: space-between;/* ทำให้ระยะชิดแยกออกด้านข้างบรรทัดเดียวกัน */
+	}
+	.product-total p{
+		font-weight: bold; /* ตัวหนา */
+	}
+	.product-action-button{
+		display: flex;
+		flex-direction: column;
+	}
+	.product-action-button a{
+		display: block;
+		text-align: center;
+		padding: .7rem;
+		margin-bottom: .5rem;
+		background: #2d3d51;
+		color: #fff;
+	}
+	.product-action-button a:first-child{
+		order: 1;
+		background: #333;
+		color: #fff;
+	}
+	.product-header{
+		display: none;
+	}
+	/* ปิด product อาหาร*/
+
+	/* Cart */
+	.product-cart{
+		margin-top: -2rem;
+		padding: 1rem;
+	}
+	.page-banner-sm{
+		font-size: 1.5rem;
+		color: #333;
+		background: var(--greyColor);
+		/* padding: 1rem; */
+	}
+	.cart-collection{
+		margin-top: 1rem;
+	}
+	/* .cart-item form{ */
+	.cart-item{
+		display: grid;
+		grid-template-columns: 100%;
+		/* border-bottom: 1px solid #efefef; */
+		border: 1px solid #efefef;/* กรอบฟอร์ม */
+		margin-bottom: 1rem;
+		border-radius: 7px 7px 0px 0px;
+		box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2),
+					inset -2px -2px 2px #efefef; /* อันนี้ทำให้กรอบเป็นหลุม */
+		/* box-shadow:  2px 2px 2px rgba(0,0,0,0.2),
+					 -2px -2px 2px #efefef; อันนี้ทำให้กรอบนูน*/
+	}
+	.cart-product{
+		display: grid;
+		grid-template-columns: 80px auto;
+		grid-gap: 0rem 1.3rem;
+		padding: 1rem 1rem; /* ขยับออกขวา */
+		border-bottom: 1px solid #efefef; /* ขีดเส้นล่าง */
+	}
+	.cart-image{
+		height: 75px;
+		border-radius: 7px;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.cart-quantity-md{
+		display: flex;
+		justify-content: space-between;
+		padding: .8rem;
+		border-bottom: 1px solid #efefef; /* ขีดเส้นล่าง */
+		
+	}
+	.cart-quantity-md-noodle{/*  ปุ่มรับจำนวนของก๋วยเตี๋ยว */
+		/* display: flex; */
+		/* justify-content: space-between;
+		padding: .8rem; */
+		/* border-bottom: 1px solid #efefef; */ /* ขีดเส้นล่าง */
+		
+	}
+	.cart-controls-sm .remove{
+		display: none;
+	}
+	.cart-unit-price,
+	.cart-product-total{
+		display: none;
+	}
+	.cart-controls-sm{
+		display: flex;
+		justify-content: space-between;
+		/* padding: .8rem; */
+		
+	}
+	.cart-quantity-controls-sm
+	.cart-quantity-controls{
+		display: flex;
+	}
+
+	.cart-quantity-controls-sm button,
+	.cart-quantity-controls-sm input,
+	.cart-quantity-controls button
+	{ /* cart-quantity-controls input ของปุ่ม input จำนวน */
+		margin-top: 5px;
+		height: 25px;
+		width: 25px;
+		border: none;
+		outline: none;
+		text-align: center;
+		font-weight: bold;
+		/* font-size: 18px; */
+		font-size: 1.1rem;
+		color: #505050;
+		margin-left: .3rem;
+	}
+	.cart-quantity-controls input{ /*ของปุ่ม input จำนวน */
+		height: 25px;
+		width: 40px;
+		border: none;
+		outline: none;
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.1rem;
+		color: #505050;
+		margin-left: .3rem;
+	}
+	.cart-quantity-controls-sm button,
+	.cart-quantity-controls button{ 
+		/* background: var(--mainColor); */ /* เดิม */
+		background: #333;
+		color: #fff;
+		border-radius: 50%;
+	}
+	.cart-product-name{
+		font-weight: bold;
+		color: #505050;
+		margin-bottom: .3rem;
+	}
+	.cart-price-sm{
+		/* color: var(--mainColor); */ /* สีดั้งเดิม */
+		color: #2d3d51;
+		font-weight: bold;
+		margin-bottom: .3rem;
+	}
+	.cart-product-info small{
+		font-weight: bold;
+		color: #333;
+	}
+	.cart-total-holder{
+		margin-top: 2rem;
+	}
+	.cart-total{
+		margin-bottom: 1rem;
+		display: flex; /* ทำให้ขึ้นมาบรรทัดเดียวกัน */
+		justify-content: space-between;/* ทำให้ระยะชิดแยกออกด้านข้างบรรทัดเดียวกัน */
+	}
+	.cart-total p{
+		font-size: 18px;
+		font-weight: bold; /* ตัวหนา */
+	}
+	.cart-action-button{
+		font-size: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+	.cart-action-button .sum{
+		margin-bottom: 0.5rem;
+	}
+
+	.cart-action-button a{
+		display: block;
+		text-align: center;
+		padding: .7rem;
+		margin-bottom: 0.2rem;
+		background: #2d3d51;
+		color: #fff;
+	}
+	.cart-action-button a:first-child{
+		order: 1;
+		background: #333;
+		color: #fff;
+	}
+	.cart-header{
+		display: none;
+	}
+	.cart-fixed{
+		margin-top: 50px;
+	}
+	.cart a{
+		text-align: center;
+		width: 100%;
+		z-index: 1;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		font-size: 20px;
+
+/* 		position: fixed;
+		appearance: none;
+		-webkit-box-align: center;
+		align-items: center;
+		border-radius: 50%;
+		bottom: 0px;
+		right: 50px;
+		top: 50px;
+		display: block;
+		height: 80px;
+		min-width: 80px;
+		-webkit-box-pack: center;
+		justify-content: center;
+		margin: 0px;
+		z-index: 999;
+		background-color: rgb(230, 138, 34);
+		border: none;
+		color: white;
+		cursor: pointer;
+		outline: none;
+		padding: 0px; */
+		/* position: relative; */
+		/* user-select: none; */
+			/* line-height: 60px; */
+/*		transition: background-color 200ms linear 0s, transform 200ms linear 0s;
+		-webkit-tap-highlight-color: transparent; */
+
+
+
+		/* margin-top: 20px; */	
+		
+		/* position: fixed; */
+		/* border: 1px solid blue; */
+		/* background-color: rgba(255, 115, 0, 0.5);   */
+	/* 	width: 150px;
+		height: 40px;
+		bottom: 0; */
+	/* 	top: 100;
+		left: 0px;
+		z-index: 3; */
+	}
+	.cart a span{
+		font-size: 18px;
+	}
+
+
+	/* ปิด Cart */
+@media screen and (min-width: 600px) {
+	/* tablet */
+
+	/* Cart */
+	.cart-quantity-md,
+	.cart-unit-price,
+	.cart-product-total{
+		font-weight: bold;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 15%;
+	}
+	.cart-item form:first-child{ /* กรอบด้านบนของฟอร์ม */
+		border-top: 1px solid #efefef;
+	}
+	.cart-item form{
+		box-shadow: none;
+		border: none;
+		display: flex; /* ขยับขึ้นมาเป็นบรรทัดเดียวกัน */
+		border-bottom: 1px solid #efefef;
+	}
+	.cart-quantity-controls-sm{
+		display: none; /* remove */
+	}
+	.cart-controls-sm{
+		/* display: none; */ /* remove */
+		align-items: center; /* จัดให้อยู่กลางกรอบ */
+	}
+	.cart-product{
+		border: none;
+	}
+	.cart-product{
+		border: none;
+		flex: 1;
+		align-items: center; /* จัดให้อยู่กลางกรอบ */
+	}
+	.cart-product small{
+		display: none;  /* ปิดคูณจำนวน */
+	}
+	.product-cart{
+		margin-top: 0rem;
+		padding-bottom: 2rem;
+	}
+	.cart-collection{
+		margin-top: 1rem;
+	}
+	.cart-header{
+		display: flex;
+		padding: 1rem 0rem;
+	}
+	.cart-header p{
+		font-weight: bold;
+		color: #000000;
+		width: 13.5%;
+		text-align: right;
+	}
+	.cart-header p:first-child{
+		width: auto;
+		flex: 1;
+		text-align: left;
+	}
+	.cart-total,
+	.cart-action-button{
+		justify-content: flex-end;
+		flex-direction: row; /* ให้มันมาบรรทัดเดียวกัน */
+	}
+	.cart-total p:first-child{
+		margin-right: 1rem;
+	}
+	.cart-action-button a{
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	.cart-action-button a:first-child{
+		margin-right: 1.2rem;
+		order: 0; /* ระยะห่าง */
+	}
+/* 	.cart-a{
+		padding-bottom: 2rem;
+	} */
+
+	/* ปิดCart */
+	.namestore {
+		margin-top: 10px;
+		color: #fff;
+		text-align: center;
+		font-size: 20px;
+	}
+	.header_id {
+		background-color: #35475e;
+		z-index: 1;
+	}
+	.header_name {
+		background-color: #35475e;
+		z-index: 1;
+	}
+
+}
+@media screen and (min-width: 800px) {
+	.cart-action-button .sum{
+		margin-bottom: 0.1rem;
+    	/* border-left-width: 10px; */
+	}
+	.cart-action-button .ok{
+    	margin-left: 10px;
+	}
+	.cart-quantity-md .remove{
+		display: none;
+	}
+	.cart-controls-sm .remove{
+		display: flex;
+		margin-right: 10px;
+	}
+	.cart-item{
+		display: flex;
+		/* display: grid; */
+		grid-template-columns: 100%;
+		/* border-bottom: 1px solid #efefef; */
+		border: 1px solid #efefef;/* กรอบฟอร์ม */
+		margin-bottom: 1rem;
+		border-radius: 7px 7px 0px 0px;
+		box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2),
+					inset -2px -2px 2px #efefef; /* อันนี้ทำให้กรอบเป็นหลุม */
+		/* box-shadow:  2px 2px 2px rgba(0,0,0,0.2),
+					 -2px -2px 2px #efefef; อันนี้ทำให้กรอบนูน*/
+	}
+	/* desktop */
+	/* Cart */
+	.page-banner-sm{
+		/* display: none; */
+		font-size: 20px
+	}
+	/* ปิดCart */
+
+	.main-content {
+		margin-left: 0px;
+	}
+	#centers{
+		text-align: center;
+	}
+}
