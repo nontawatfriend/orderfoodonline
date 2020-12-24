@@ -12,7 +12,7 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     echo "<script type='text/javascript'>alert('$message');</script>";
     echo '<meta http-equiv="refresh"content="0;url=?page=chinese_soup">';
 }else {
-    $key = array_search($_POST["food_name"], $_SESSION["strfoodname"]);
+    $key = array_search($_POST["food_name"], $_SESSION["strfoodname"]); //ค้นหา คำที่เหมือน ใน array
     if((string)$key == ""){
         //ไม่มีค่า ทำการเพิ่มรายการใหม่ใน session
         $_SESSION["intLine"] = $_SESSION["intLine"] + 1;
