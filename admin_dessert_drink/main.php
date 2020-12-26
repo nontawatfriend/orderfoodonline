@@ -21,7 +21,7 @@ td{
 	function bodyOnload()
 	{
 		doCallAjax('order_id')
-		setTimeout("doLoop();",200000);
+		setTimeout("doLoop();",2000);
 	}
 
 	function doLoop()
