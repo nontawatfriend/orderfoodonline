@@ -68,5 +68,5 @@ while($rowi=$resulti->fetch_array(MYSQLI_ASSOC)){?>
     </form>
 <?php
 }
-mysqli_close($db);
+/* mysqli_close($db); */
 ?>

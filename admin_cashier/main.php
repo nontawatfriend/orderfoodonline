@@ -11,7 +11,7 @@
 	function bodyOnload()
 	{
 		doCallAjax('order_id')
-		setTimeout("doLoop();",2000);
+		setTimeout("doLoop();",2000); /* 2วิ */
 	}
 
 	function doLoop()

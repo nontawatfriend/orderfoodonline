@@ -1,6 +1,6 @@
 <?php
-$order_id=$_POST["order_id"].'<br>';
-$table_id=$_POST["table_id"].'<br>';
+$order_id=$_POST["order_id"];
+$table_id=$_POST["table_id"];
 $sql="UPDATE orders set food_statusid='2' where order_id='$order_id' and table_id='$table_id'";
 $result=$db->query($sql);
 foreach($_POST["food_id"] as $id){
