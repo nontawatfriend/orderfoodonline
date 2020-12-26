@@ -1,9 +1,21 @@
 <?php include("admin/config.php");
-if($_GET['id_table']!=""){
+if($_GET['id_table']!=""){ //มีหมายเลขโต๊ะ
   session_start ();  
   $_SESSION["id_table"]=$_GET["id_table"];
+  unset($_SESSION["timeLasetdActive"]);//มีหมายเขโต๊ะมาให้เริ่มนับเวลา session ใหม่
 }else
 session_start ();
+    $sessionlifetime = 1800; //กำหนดเป็นวินาที 1800 เท่ากับ 30นาที
+    if(isset($_SESSION["timeLasetdActive"])){
+      $seclogin = (time()-(int)$_SESSION["timeLasetdActive"]);
+        if($seclogin>$sessionlifetime){
+          unset($_SESSION["id_table"]);
+        }else{
+          $_SESSION["timeLasetdActive"] = time();
+        }
+    }else{
+          $_SESSION["timeLasetdActive"] = time();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +53,11 @@ session_start ();
   </script>
 </head>
 <body>
+<?php
+if($_SESSION["id_table"]==""){
+  echo "<div class=\"alert alert-warning\" align=\"center\">หมดอายุการใช้งานกรุณาสแกน QR Code ใหม่อักครั้ง</div>";
+}else{
+?>
 <div class="header_id">
 <!--     <div class="logo">
         <a href="index.php"><i class="fa fa-tachometer"></i> Admin</a>
@@ -370,6 +387,7 @@ $(".button").on("click", function() {
 });
 </script>
 <!-- ปิดปุ่มเพิ่มลบจำนวน -->
-
-
 </html>
+<?php   
+}
+?>
