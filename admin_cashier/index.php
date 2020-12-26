@@ -33,7 +33,7 @@
 		<script src="js/jquery.fancybox.min.js"></script>
 		
 	</head>
-	<body>
+	<body Onload="bodyOnload();">
 		<div class="header">
 			<div class="logo">
 				<a href="index.php"><i class="fa fa-tachometer"></i> Admin</a>

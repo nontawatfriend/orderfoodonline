@@ -4,7 +4,7 @@
 		<label class="col-sm-5 control-label">วันที่</label>
 		<div class="col-sm-4" style="margin-top: 8px;">
     <div id="date"></div>
-			<input type="hidden" name="date" id="date" class="form-control-static" value="<?=date("Y-m-d H:i:s");?>">
+			<input type="hidden" name="date" id="date" class="form-control-static" value="<?php echo date("Y-m-d H:i:s");?>">
 		</div>
 	  <div class="col-md-3"></div>
 	</div>
@@ -91,9 +91,9 @@
 	}
 </script>
 <script>
-var day = ["วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุทธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"];
-var month = ["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน",
-"กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤษจิกายน","ธันวาคม"];
-var d = new Date();
-document.getElementById("date").innerHTML=day[d.getDay()]+" ที่ "+(d.getDate())+" "+(month[d.getMonth()])+" พ.ศ. "+(d.getFullYear()+543)+" เวลา "+(d.getHours())+":"+(d.getMinutes()>9? d.getMinutes():'0'+d.getMinutes())+" น.";
+	var day = ["วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุทธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"];
+	var month = ["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน",
+	"กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤษจิกายน","ธันวาคม"];
+	var d = new Date();
+	document.getElementById("date").innerHTML=day[d.getDay()]+" ที่ "+(d.getDate())+" "+(month[d.getMonth()])+" พ.ศ. "+(d.getFullYear()+543)+" เวลา "+(d.getHours())+":"+(d.getMinutes()>9? d.getMinutes():'0'+d.getMinutes())+" น.";
 </script>
