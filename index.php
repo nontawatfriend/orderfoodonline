@@ -5,7 +5,7 @@ if($_GET['id_table']!=""){ //มีหมายเลขโต๊ะ
   unset($_SESSION["timeLasetdActive"]);//มีหมายเขโต๊ะมาให้เริ่มนับเวลา session ใหม่
 }else
 session_start ();
-    $sessionlifetime = 1800; //กำหนดเป็นวินาที 1800 เท่ากับ 30นาที
+    $sessionlifetime = 900; //กำหนดเป็นวินาที 900 เท่ากับ 15นาที
     if(isset($_SESSION["timeLasetdActive"])){
       $seclogin = (time()-(int)$_SESSION["timeLasetdActive"]);
         if($seclogin>$sessionlifetime){

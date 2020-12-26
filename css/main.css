@@ -373,6 +373,10 @@ h1 {
 	}
 	.cart-action-button .sum{
 		margin-bottom: 0.5rem;
+		padding: 12px;
+	}
+	.cart-action-button .ok{
+		padding: 12px;
 	}
 
 	.cart-action-button a{
@@ -557,7 +561,8 @@ h1 {
     	/* border-left-width: 10px; */
 	}
 	.cart-action-button .ok{
-    	margin-left: 10px;
+		margin-left: 10px;
+		padding: 10px;
 	}
 	.cart-quantity-md .remove{
 		display: none;

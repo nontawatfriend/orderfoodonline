@@ -245,7 +245,7 @@ $action = isset($_GET['a']) ? $_GET['a'] : "";
                     </div>
                     <div class="cart-action-button">
                         <!-- <a href="index.php">สั่งรายการต่อ</a> -->
-                        <button class="btn btn-primary sum" id="submit" type="submit" onClick="submit();"><i class="fa fa-refresh" aria-hidden="true"></i> อัพเดทราคาอาหารใหม่</button><!-- fa fa-hand-o-right -->
+                        <button class="btn btn-primary sum" id="submit" type="submit" onClick="submit();"><i class="fa fa-refresh" aria-hidden="true"></i> อัพเดทรายการอาหารใหม่</button><!-- fa fa-hand-o-right -->
                         <!-- Button trigger modal -->
                         <a type="button" class="btn btn-success ok" data-toggle="modal" data-target="#exampleModal">ยืนยันรายการ</a>
                     </div>
