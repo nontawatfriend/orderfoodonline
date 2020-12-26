@@ -55,7 +55,7 @@ session_start ();
 <body>
 <?php
 if($_SESSION["id_table"]==""){
-  echo "<div class=\"alert alert-warning\" align=\"center\">หมดอายุการใช้งานกรุณาสแกน QR Code ใหม่อักครั้ง</div>";
+  echo "<div class=\"alert alert-warning\" align=\"center\">หมดอายุการใช้งานกรุณาสแกน QR Code ใหม่อีกครั้ง</div>";
 }else{
 ?>
 <div class="header_id">
