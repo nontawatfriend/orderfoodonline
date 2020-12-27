@@ -9,14 +9,13 @@
 <link rel="stylesheet" href="css/style_login.css">
 <link rel="stylesheet" href="fonts/Mali.css">
 <link rel="stylesheet" href="fonts/font-awesome.min.css">
+<script src="js/jquery-2.2.0.min.js"></script>
 <?php 
 $sqlimg="SELECT restaurant_img from restaurant";
 $resultimg=$db->query($sqlimg);
 while($rowimg=$resultimg->fetch_array(MYSQLI_ASSOC)){
 ?>
 <link rel="icon" href="img/<?=$rowimg["restaurant_img"]?>">
-
-<script src="js/jquery-2.2.0.min.js"></script>
 </head>
 <body>
   <form id="register_form" method="post" action="logins.php" class="form-horizontal">

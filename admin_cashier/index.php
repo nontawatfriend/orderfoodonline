@@ -123,6 +123,12 @@ if(!isset($_SESSION["username"]) || $_SESSION["password"] ==""){
 							<span>token แจ้งเตือน</span>
 						</a>
 					</li>
+					<li <?php if($_GET['page']=="logout") echo'class="active"'?>>
+						<a href="?page=logout" title="ออกจากระบบ">
+							<span><i class="fa fa-sign-out"></i></span>
+							<span style="color: tomato;">ออกจากระบบ</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
