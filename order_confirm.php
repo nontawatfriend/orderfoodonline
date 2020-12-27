@@ -4,6 +4,12 @@ require 'admin/config.php';
 date_default_timezone_set('Asia/Bangkok');
 $today=date("Y-m-d");
 $food_statusid=1;
+if(!isset($_SESSION["intLine"])){?>
+  <meta http-equiv="refresh" content="1;url=?page=cart"/>
+  <?php
+  exit(0);
+}else{
+//exit(0);
 //echo 'สถานะเสตตัสของออร์เดอร์ '.$food_statusid.'<br>';
 //foreach($_POST["food_id"] as $food_id ) {
     //echo 'ไอดีอาหาร '.$food_id.' จำนวน '.$_POST['unit_food_'.$food_id].' ประเภทไอดีอาหาร '.$_POST['foodtype_id_'.$food_id].' ประเภทน้ำ/แห้ง-> '.$_POST['food_water_'.$food_id].' ชื่อประเภทราคาอาหาร '.$_POST['food_price_'.$food_id].' โน๊ด '.$_POST['food_note_'.$food_id].' ท็อปปิ้ง '.$_POST['food_topping_'.$food_id].'<br>';
@@ -142,6 +148,7 @@ if($_POST["id_table"]==$rowSelect["table_id"] and $rowSelect["food_statusid"]=='
     ?>
 <?php 
 } 
+}
 ?>
 
 
