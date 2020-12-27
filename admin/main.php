@@ -25,7 +25,7 @@ $today2=date("d/m/Y");
 					<div class="title-ad"> 
 		            </div>
 					<br>
-					<b>ยอดขายวันนี้ <b id="showData2"></b> บาท (<?=$today2?>)</b>
+					<b>ยอดขายวันนี้ <b id="showData2"></b> บาท (<?php echo $today2; ?>)</b>
 					<br><br>
 					<b>ยอดขายทั้งหมด  <b id="showData1"></b> บาท</b>
 				</div>
