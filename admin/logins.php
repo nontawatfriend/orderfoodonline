@@ -7,7 +7,7 @@
 <script src="js/sweetalert2@10.js"></script> <!--sweetalert2@10-->
 <?php 
 session_start();
-include("../admin/config.php");
+include("config.php");
 
 $_SESSION["username"] = $_POST['username'];
 $_SESSION["password"] = $_POST['password'];
