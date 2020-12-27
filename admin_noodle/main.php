@@ -15,7 +15,7 @@ td{
 }
 </style>
 <?php include("../admin/config.php"); ?>
-<div class="title">ออร์เดอร์(ก๋วยเตี๋ยว/เกาเหลา/เมนูนรก)</div>
+<div class="title">ออร์เดอร์(ก๋วยเตี๋ยว/เกาเหลา)</div>
 <script language="JavaScript">
 
 	function bodyOnload()
