@@ -15,7 +15,6 @@
 			?>
 		<link rel="icon" href="../admin/img/<?=$rowimg["restaurant_img"]?>">
 			<?php }?>
-		<!-- <link rel="stylesheet" href="fonts/Kamit.css" > -->
 		<link rel="stylesheet" href="fonts/Mali.css">
 		<link rel="stylesheet" href="fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="css/ionicons.min.css">
@@ -112,7 +111,7 @@
 					</li>
 					<li <?php if($_GET['page']=="token") echo'class="active"'?>
 					<?php if($_GET['page']=="token_edit") echo'class="active"'?>>
-						<a href="?page=token" title="token แจ้งเตือน">
+						<a href="#" title="token แจ้งเตือน">
 							<span><i class="fa fa-bell"></i></span>
 							<span>token แจ้งเตือน</span>
 						</a>

@@ -1,4 +1,10 @@
-<?php include("config.php"); ?>
+<?php include("config.php"); 
+session_start();
+if(!isset($_SESSION["username"]) || $_SESSION["password"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=login.php">';
+	exit(0);
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -120,10 +126,34 @@
 							<span>รายงาน</span>
 						</a>
 					</li>
-					<li <?php if($_GET['page']=="orders") echo'class="active"'?>>
+					<!-- <li <?php if($_GET['page']=="orders") echo'class="active"'?>>
 						<a href="?page=orders" title="ออร์เดอร์">
 							<span><i class="fa fa-sort"></i></span>
 							<span>สถานะออร์เดอร์</span>
+						</a>
+					</li> -->
+					<li>
+						<a href="../admin_noodle/index.php" title="ออเดอร์ก๋วยเตี๋ยวฯ">
+							<span><i class="fa fa-arrow-right"></i></span>
+							<span>ออเดอร์ก๋วยเตี๋ยวฯ</span>
+						</a>
+					</li>
+					<li>
+						<a href="../admin_dessert_drink/index.php" title="ออเดอร์ของหวานฯ">
+							<span><i class="fa fa-arrow-right"></i></span>
+							<span>ออเดอร์ของหวานฯ</span>
+						</a>
+					</li>
+					<li>
+						<a href="../admin_hell/index.php" title="ออเดอร์เมนูนรก">
+							<span><i class="fa fa-arrow-right"></i></span>
+							<span>ออเดอร์เมนูนรก</span>
+						</a>
+					</li>
+					<li>
+						<a href="../admin_cashier/index.php" title="แผนกแคชเชียร์">
+							<span><i class="fa fa-money"></i></span>
+							<span>แผนกแคชเชียร์</span>
 						</a>
 					</li>
 					<li <?php if($_GET['page']=="logout") echo'class="active"'?>>

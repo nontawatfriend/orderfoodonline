@@ -112,7 +112,7 @@
 					</li>
 					<li <?php if($_GET['page']=="token") echo'class="active"'?>
 					<?php if($_GET['page']=="token_edit") echo'class="active"'?>>
-						<a href="?page=token" title="token แจ้งเตือน">
+						<a href="#" title="token แจ้งเตือน">
 							<span><i class="fa fa-bell"></i></span>
 							<span>token แจ้งเตือน</span>
 						</a>
