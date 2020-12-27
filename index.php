@@ -1,7 +1,7 @@
 <?php include("admin/config.php");
-if($_GET['id_table']!=""){ //มีหมายเลขโต๊ะ
+if($_GET["id_table"]!=""){ //มีหมายเลขโต๊ะ
   session_start ();  
-  $_SESSION["id_table"]=$_GET["id_table"];
+  $_SESSION["id_table"]=base64_decode($_GET["id_table"]);
   unset($_SESSION["timeLasetdActive"]);//มีหมายเขโต๊ะมาให้เริ่มนับเวลา session ใหม่
 }else
 session_start ();
@@ -54,10 +54,10 @@ session_start ();
 </head>
 <body>
 <?php
-$sqltable="SELECT tables_id FROM tables where tables_id='".$_SESSION["id_table"]."'"; //ตรวจสอบหมายเลขโต๊ะอาหารว่ามีในฐานข้อมูลไหม
+$sqltable="SELECT tables_number,tables_status FROM tables where tables_number='".$_SESSION["id_table"]."' and tables_status=1"; //ตรวจสอบหมายเลขโต๊ะอาหารว่ามีในฐานข้อมูลไหม
 $resulttable=$db->query($sqltable);
 $rowtable=$resulttable->fetch_array(MYSQLI_ASSOC);
-$rowtableid=$rowtable["tables_id"];
+$rowtableid=$rowtable["tables_number"];
 
 if($rowtableid == $_SESSION["id_table"]){
   if($_SESSION["id_table"]==""){
@@ -150,10 +150,6 @@ if($rowtableid == $_SESSION["id_table"]){
               </div><!--ปิดกรอบเมนู-->
           </div>
           <?php
-          //$_SESSION["id_table"]=$_GET["id_table"];
-          
-          //echo $_SESSION["id_table"];
-          //เก็บตัวแปร _GET SESSION ของ id_table
             if(@$_GET['fd'])
               $file=$_GET['fd']."/".$_GET['page'].".php";
             else
@@ -162,7 +158,7 @@ if($rowtableid == $_SESSION["id_table"]){
               require_once("$file");
             }
             else{
-              $_SESSION["id_table"]=$_GET["id_table"];
+              $_SESSION["id_table"]=base64_decode($_GET["id_table"]); //แปลงและรับไอดีโต๊ะ
               require_once("recommended_menu.php");
             }
           ?>
@@ -397,6 +393,6 @@ if($rowtableid == $_SESSION["id_table"]){
   <?php   
   }
 }else{
-  echo "<div class=\"alert alert-warning\" align=\"center\">ไม่มีหมายเลขโต๊ะกรุณาสแกน QR Code ใหม่อีกครั้ง</div>";
+  echo "<div class=\"alert alert-warning\" align=\"center\">ไม่พบสถานะโต๊ะกรุณาสแกน QR Code ใหม่อีกครั้ง</div>";
 }
 ?>
