@@ -87,11 +87,8 @@ td{
             </td>
             <td>
                 <button data-id=<?php echo $row["tables_id"]; ?> class='btn btn-primary userinfo'>ดูลิ้ง</button>
-                <!-- <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ดูลิ้ง</a> -->
-                <!-- <?=$row["tables_link"]?> -->
+                <!-- <a href="https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=" target="_blank">เว็บแปลง QR CODE</a> -->
             </td>
-
-
         </tr>
         <?php } ?>
     </tbody>
