@@ -1,10 +1,15 @@
-﻿<meta charset="utf-8">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="fonts/Mali.css">
-<link rel="stylesheet" href="fonts/font-awesome.min.css">
-<link rel="stylesheet" href="css/style_login.css">
-<script src="js/sweetalert2@10.js"></script> <!--sweetalert2@10-->
+﻿<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="fonts/Mali.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style_login.css">
+        <script src="js/sweetalert2@10.js"></script> <!--sweetalert2@10-->
+    </head>
+</html>
 <?php 
 session_start();
 include("config.php");
