@@ -33,22 +33,22 @@ $today2=date("d/m/Y");
 				<div class="widget">
 					<div class="title">ยอดขายต่อวัน</div>
 					<div class="chart"><br>
-						<table class="table table-hover table-bordered" id="example" width="100%">
+						<table class="table table-hover table-bordered" id="example1" width="100%">
 							<thead style="background-color: #35475e">
 							<tr>
 								<th>วันที่</th>
-								<th>ยอดขายรวม</th>
+								<th>ยอดขายรวม (บาท)</th>
 							</tr>
 							</thead>
 							<tbody>
 							<?php
-								$sql="SELECT order_date,order_price,order_id, SUM(order_price) as order_price FROM orders GROUP BY order_date order by order_id DESC";
+								$sql="SELECT order_date,order_price,order_id, SUM(order_price) as order_price FROM orders GROUP BY order_date order by order_date DESC";
 								$result=$db->query($sql);
         						while($row=$result->fetch_array(MYSQLI_BOTH)){ 
 							?>
 								<tr>
 									<td><?php echo $row["order_date"];?></td>
-									<td><?php echo number_format($row["order_price"]);?> บาท</td>
+									<td><?php echo number_format($row["order_price"]);?></td>
 								</tr>
 							<?php } ?>
 							</tbody>
@@ -62,18 +62,18 @@ $today2=date("d/m/Y");
 						<thead style="background-color: #35475e">
 							<tr>
 								<th>เดือน</th>
-								<th>ยอดขายรวม</th>
+								<th>ยอดขายรวม (บาท)</th>
 							</tr>
 							</thead>
 							<tbody>
 							<?php
-								$sql="SELECT order_date,order_price,order_id, MONTH(order_date) as order_datemonth, YEAR(order_date) as order_dateyear , SUM(order_price) as order_price FROM orders GROUP BY order_dateyear,order_datemonth order by order_id DESC";
+								$sql="SELECT order_date,order_price,order_id, MONTH(order_date) as order_datemonth, YEAR(order_date) as order_dateyear , SUM(order_price) as order_price FROM orders GROUP BY order_dateyear,order_datemonth order by order_date DESC";
 								$result=$db->query($sql);
         						while($row=$result->fetch_array(MYSQLI_BOTH)){ 		
 							?>
 								<tr>
 									<td><?php echo $row["order_dateyear"].'-'.$row["order_datemonth"];?></td>
-									<td><?php echo number_format($row["order_price"]);?> บาท</td>
+									<td><?php echo number_format($row["order_price"]);?></td>
 								</tr>
 							<?php } ?>
 							</tbody>
@@ -87,18 +87,18 @@ $today2=date("d/m/Y");
 						<thead style="background-color: #35475e">
 							<tr>
 								<th>ปี</th>
-								<th>ยอดขายรวม</th>
+								<th>ยอดขายรวม (บาท)</th>
 							</tr>
 							</thead>
 							<tbody>
 							<?php
-								$sql="SELECT order_date,order_price,order_id, YEAR(order_date) as order_dateyear , SUM(order_price) as order_price FROM orders GROUP BY order_dateyear order by order_id DESC";
+								$sql="SELECT order_date,order_price,order_id, YEAR(order_date) as order_dateyear , SUM(order_price) as order_price FROM orders GROUP BY order_dateyear order by order_date DESC";
 								$result=$db->query($sql);
         						while($row=$result->fetch_array(MYSQLI_BOTH)){ 		
 							?>
 								<tr>
 									<td><?php echo $row["order_dateyear"];?></td>
-									<td><?php echo number_format($row["order_price"]);?> บาท</td>
+									<td><?php echo number_format($row["order_price"]);?></td>
 								</tr>
 								<?php } ?>
 							</tbody>
@@ -141,8 +141,8 @@ $(function(){
 <script>
 	$(document).ready(function() {
     //กำหนดให้  Plug-in dataTable ทำงาน ใน ตาราง Html ที่มี id เท่ากับ example
-		$('#example').DataTable( {
-			"order": [[ 1, "desc" ]], //ให้เรียงจากมากไปน้อย
+		$('#example1').DataTable( {
+			"order": [[ 0, "desc" ]], //ให้เรียงจากมากไปน้อย
 			"lengthMenu": [[10, 25, 100, -1], [10, 25, 100, "All"]]
 		} );
 	} );
@@ -150,7 +150,7 @@ $(function(){
 	$(document).ready(function() {
     //กำหนดให้  Plug-in dataTable ทำงาน ใน ตาราง Html ที่มี id เท่ากับ example
 		$('#example2').DataTable( {
-			"order": [[ 1, "desc" ]], //ให้เรียงจากมากไปน้อย
+			"order": [[ 0, "desc" ]], //ให้เรียงจากมากไปน้อย
 			"lengthMenu": [[10, 25, 100, -1], [10, 25, 100, "All"]]
 		} );
 	} );
@@ -159,7 +159,7 @@ $(function(){
 	$(document).ready(function() {
     //กำหนดให้  Plug-in dataTable ทำงาน ใน ตาราง Html ที่มี id เท่ากับ example
 		$('#example3').DataTable( {
-			"order": [[ 1, "desc" ]], //ให้เรียงจากมากไปน้อย
+			"order": [[ 0, "desc" ]], //ให้เรียงจากมากไปน้อย
 			"lengthMenu": [[10, 25, 100, -1], [10, 25, 100, "All"]]
 		} );
 	} );
