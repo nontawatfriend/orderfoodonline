@@ -1,4 +1,10 @@
-<?php include("../admin/config.php"); ?>
+<?php include("../admin/config.php");
+session_start();
+if(!isset($_SESSION["username"]) || $_SESSION["password"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=../admin/login.php">';
+	exit(0);
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>

@@ -6,7 +6,7 @@
 }
 </style>
 <?php include("../admin/config.php"); ?>
-<div class="title">ออร์เดอร์ทั้งหมด</div>
+<div class="title">ออร์เดอร์ทั้งหมด (แคชเชียร์)</div>
 <script language="JavaScript">
 	function bodyOnload()
 	{
