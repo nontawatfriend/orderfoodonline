@@ -1,7 +1,7 @@
 <?php include("admin/config.php");
 if($_GET["id_table"]!=""){ //มีหมายเลขโต๊ะ
   session_start ();  
-  $_SESSION["id_table"]=base64_decode($_GET["id_table"]);
+  $_SESSION["id_table"]=base64_decode($_GET["id_table"]); //รับเข้ารหัสมาแปลงเป็นตัวเลขเป็นปกติ
   unset($_SESSION["timeLasetdActive"]);//มีหมายเขโต๊ะมาให้เริ่มนับเวลา session ใหม่
 }else
 session_start ();
