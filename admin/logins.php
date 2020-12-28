@@ -13,15 +13,15 @@
 <?php 
 session_start();
 include("config.php");
-
-$_SESSION["username"] = $_POST['username'];
-$_SESSION["password"] = $_POST['password'];
-
-if(isset($_SESSION["username"])){
-    $sql="SELECT * FROM tb_admin where username='".$_SESSION["username"]."' and password='".$_SESSION["password"]."'";
+$username = $_POST['username'];
+$password = $_POST['password'];
+if(isset($username)){
+    $sql="SELECT * FROM tb_admin where username='".$username."' and password='".$password."'";
     $results = mysqli_query($db, $sql);
     $row=$results->fetch_array(MYSQLI_ASSOC);
     if (mysqli_num_rows($results) > 0) {
+    $_SESSION["username"] = $row["username"];
+    $_SESSION["password"] = $row["password"];
         ?>
         <script type="text/javascript">
             Swal.fire({

@@ -1,4 +1,9 @@
-<?php include("config.php"); ?>
+<?php include("config.php");
+session_start();
+if(isset($_SESSION["username"]) || $_SESSION["username"] !="" || $_SESSION["password"] !=""){
+	echo'<meta http-equiv="refresh" content="0;url=index.php">';
+	exit(0);
+}?>
 <!doctype html>
 <html>
 <head>
