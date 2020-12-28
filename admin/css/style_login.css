@@ -1,18 +1,17 @@
+* {
+	box-sizing: border-box;
+}
+/* logo in header(mobile version) and side-nav (tablet & desktop) */
 body {
 	font-family: 'Mali', cursive;
 }
-/* body,header,font,a,th,h1 {
-    font-family: 'Mali', cursive;
-  } */
-  
   #register_form h1 {
     text-align: center;
   }
-  
   #register_form {
     text-align: center;
-    width: 37%;
-    margin: 100px auto; /*บนล่าง 100 และจัดกึ่งกลางให้กับซ้ายขวาออโต้*/
+    width: 80%;
+    margin: 30px auto; /*บนล่าง 100 และจัดกึ่งกลางให้กับซ้ายขวาออโต้*/
     padding: 2rem 0; /* ระยะห่างบนล่าง*/
     border-radius: 1rem;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
@@ -121,8 +120,26 @@ body {
           transform: translateX(0px);
       }
   }
-  
-  
-  
-  
-  
+  @media screen and (min-width: 600px) {
+    #register_form {
+      text-align: center;
+      width: 80%;
+      margin: 30px auto; /*บนล่าง 100 และจัดกึ่งกลางให้กับซ้ายขวาออโต้*/
+      padding: 2rem 0; /* ระยะห่างบนล่าง*/
+      border-radius: 1rem;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+      background: white;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    #register_form {
+      text-align: center;
+      width: 40%;
+     /*  height: 100%; */
+      margin: 100px auto; /*บนล่าง 100 และจัดกึ่งกลางให้กับซ้ายขวาออโต้*/
+      padding: 2rem 0; /* ระยะห่างบนล่าง*/
+      border-radius: 1rem;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+      background: white;
+    }
+  }

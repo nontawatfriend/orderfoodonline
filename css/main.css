@@ -323,7 +323,7 @@ h1 {
 	}
 	.cart-quantity-controls input{ /*ของปุ่ม input จำนวน */
 		height: 25px;
-		width: 40px;
+		width: 33px;
 		border: none;
 		outline: none;
 		text-align: center;
@@ -467,7 +467,8 @@ h1 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 15%;
+		margin-right: 5%;
+		/* width: 15%; */
 	}
 	.cart-item form:first-child{ /* กรอบด้านบนของฟอร์ม */
 		border-top: 1px solid #efefef;
@@ -484,9 +485,6 @@ h1 {
 	.cart-controls-sm{
 		/* display: none; */ /* remove */
 		align-items: center; /* จัดให้อยู่กลางกรอบ */
-	}
-	.cart-product{
-		border: none;
 	}
 	.cart-product{
 		border: none;
@@ -553,7 +551,49 @@ h1 {
 		background-color: #35475e;
 		z-index: 1;
 	}
-
+	
+	.cart-action-button .sum{
+		margin-bottom: 0.1rem;
+    	/* border-left-width: 10px; */
+	}
+	.cart-action-button .ok{
+		margin-left: 10px;
+		padding: 10px;
+	}
+	.cart-quantity-md .remove{
+		display: none;
+	}
+	.cart-controls-sm .remove{
+		display: flex;
+		margin-right: 10px;
+	}
+	.cart-item{
+		display: flex;
+		/* display: grid; */
+		grid-template-columns: 100%;
+		/* border-bottom: 1px solid #efefef; */
+		border: 1px solid #efefef;/* กรอบฟอร์ม */
+		margin-bottom: 1rem;
+		border-radius: 7px 7px 0px 0px;
+		box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2),
+					inset -2px -2px 2px #efefef; /* อันนี้ทำให้กรอบเป็นหลุม */
+		/* box-shadow:  2px 2px 2px rgba(0,0,0,0.2),
+					 -2px -2px 2px #efefef; อันนี้ทำให้กรอบนูน*/
+	}
+	.cart-quantity-controls button
+	{ /* cart-quantity-controls input ของปุ่ม input จำนวน */
+		margin-top: 5px;
+		height: 25px;
+		width: 25px;
+		border: none;
+		outline: none;
+		text-align: center;
+		font-weight: bold;
+		/* font-size: 18px; */
+		font-size: 1.1rem;
+		color: #e9e9e9;
+		margin-left: .3rem;
+	}
 }
 @media screen and (min-width: 800px) {
 	.cart-action-button .sum{
@@ -583,6 +623,15 @@ h1 {
 					inset -2px -2px 2px #efefef; /* อันนี้ทำให้กรอบเป็นหลุม */
 		/* box-shadow:  2px 2px 2px rgba(0,0,0,0.2),
 					 -2px -2px 2px #efefef; อันนี้ทำให้กรอบนูน*/
+	}
+	.cart-quantity-md,
+	.cart-unit-price,
+	.cart-product-total{
+		font-weight: bold;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 9%;
 	}
 	/* desktop */
 	/* Cart */

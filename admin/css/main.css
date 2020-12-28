@@ -27,6 +27,9 @@ td{
     font-size: 10px;
 	font-weight: bold;
 }
+.pagination>.active>a{/* ให้หมายเลหน้า datable อยู่ด้านหลัง*/
+	z-index: 0;
+} 
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .input-group{
 	width: 80%;
@@ -115,7 +118,7 @@ td{
 .side-nav {
 	position: absolute;
 	width: 100%;
-	height: 110vh;
+	height: 130vh;
 	background-color: #35475e;
 	z-index: 1;
 	display: none;

@@ -9,6 +9,7 @@ if(isset($_SESSION["username"]) || $_SESSION["username"] !="" || $_SESSION["pass
 <head>
 <meta charset="utf-8">
 <title>เข้าสู่ระบบ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/style_login.css">
@@ -34,7 +35,7 @@ while($rowimg=$resultimg->fetch_array(MYSQLI_ASSOC)){
         <input class="widthlogin form-control" type="password" name="password" id="password" placeholder="Password" onBlur="chkpassword();" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" id="password"><br>
       </div>
       <div>
-        <button type="button" name="login" id="login_btn" class="snapLeftBtn" onClick="confirmlogin();"><span><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</span></button>
+        <button type="button" name="login" id="login_btn" class="snapLeftBtn" onClick="confirmlogin();"><span> เข้าสู่ระบบ</span></button>
       </div>
   </form>
 <script>
