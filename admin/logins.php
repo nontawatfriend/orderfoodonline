@@ -12,8 +12,9 @@
     </head>
 </html>
 <?php 
-session_start();
 include("config.php");
+session_start();
+$on=$_POST["check"];
 $username = $_POST['username'];
 $password = $_POST['password'];
 if(isset($username)){
@@ -21,20 +22,40 @@ if(isset($username)){
     $results = mysqli_query($db, $sql);
     $row=$results->fetch_array(MYSQLI_ASSOC);
     if (mysqli_num_rows($results) > 0) {
-    $_SESSION["username"] = $row["username"];
-    $_SESSION["password"] = $row["password"];
-        ?>
-        <script type="text/javascript">
-            Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'เข้าสู่ระบบแอดมิน',
-            showConfirmButton: false, //show ปุ่มให้กด
-            timer: 1500
-            })
-        </script>
-    <meta http-equiv="refresh" content="1;url=../admin"/>
-<?php
+        if($on==""){
+            $_SESSION["username"]=$row["username"];
+            $_SESSION["password"]=$row["password"];
+            ?>
+                <script type="text/javascript">
+                    Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'เข้าสู่ระบบแอดมิน',
+                    showConfirmButton: false, //show ปุ่มให้กด
+                    timer: 1500
+                    })
+                </script>
+            <meta http-equiv="refresh" content="1;url=index.php"/>
+            <?php
+        }else{
+            $username=$row["username"];
+            $password=$row["password"];
+            /* setcookie("yourusername","$username",time()+3600*24*356); */ //ตลอดเวลา
+            setcookie ("yourusername","$username",time()+30 );
+            setcookie ("yourpassword","$password",time()+30 );
+            ?>
+                <script type="text/javascript">
+                    Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'เข้าสู่ระบบแอดมิน',
+                    showConfirmButton: false, //show ปุ่มให้กด
+                    timer: 1500
+                    })
+                </script>
+            <meta http-equiv="refresh" content="1;url=index.php"/>
+            <?php
+        }
     } else {
         ?>
         <script type="text/javascript">

@@ -1,10 +1,9 @@
 <?php include("config.php"); 
 session_start();
-if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] ==""){
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
 	echo'<meta http-equiv="refresh" content="0;url=login.php">';
 	exit(0);
-}
-?>
+}?>
 <!DOCTYPE html>
 <html>
 	<head>
