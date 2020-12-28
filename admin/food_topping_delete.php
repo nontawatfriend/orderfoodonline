@@ -1,5 +1,4 @@
 <?php
-echo $_POST["foodtopping_id"];exit(0);
 	$sql="DELETE from food_topping where foodtopping_id='".$_POST["foodtopping_id"]."'";
 	$result=$db->query($sql);
 	if($result){?>

@@ -32,7 +32,8 @@
     margin-left:2px;
 }
 </style>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.img.js"></script>
+<!--     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script> -->
     <script type="text/javascript">
         window.alert = function(){};
         var defaultCSS = document.getElementById('bootstrap-css');
@@ -156,7 +157,7 @@
 		return false;
     }
 		document.getElementById("frm").submit();
-		$("#buttontext").html("ระบบกำลังทำการโปรดรอสักครู่.....");
+		$("#buttontext").html("โปรดรอสักครู่...");
 		document.getElementById("buttontext").disabled = true;
 		return true;
 	}

@@ -1,5 +1,5 @@
 <?php
-$sql=("select foodtype_name from food_type where foodtype_name='".$_POST["type_name"]."'");
+$sql=("SELECT foodtype_name from food_type where foodtype_name='".$_POST["type_name"]."'");
 $result=$db->query($sql);
 $num=mysqli_num_rows($result);
 if($num>0){
@@ -18,7 +18,7 @@ if($num>0){
 <?php
 }
 else{
-    $sql="insert into food_type(foodtype_name,foodtype_status)values('$_POST[type_name]','1')";
+    $sql="INSERT into food_type(foodtype_name,foodtype_status) values('$_POST[type_name]','1')";
     $result=$db->query($sql);
     if($result){?>
     <script type="text/javascript">
