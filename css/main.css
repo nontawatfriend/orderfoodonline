@@ -323,7 +323,7 @@ h1 {
 	}
 	.cart-quantity-controls input{ /*ของปุ่ม input จำนวน */
 		height: 25px;
-		width: 33px;
+		width: 40px;
 		border: none;
 		outline: none;
 		text-align: center;
@@ -453,8 +453,6 @@ h1 {
 	.cart a span{
 		font-size: 18px;
 	}
-
-
 	/* ปิด Cart */
 @media screen and (min-width: 600px) {
 	/* tablet */
@@ -467,7 +465,7 @@ h1 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-right: 5%;
+		margin-right: 4.3%;
 		/* width: 15%; */
 	}
 	.cart-item form:first-child{ /* กรอบด้านบนของฟอร์ม */
@@ -631,7 +629,7 @@ h1 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 9%;
+		width: 10%;
 	}
 	/* desktop */
 	/* Cart */

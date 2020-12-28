@@ -50,7 +50,7 @@ require 'admin/config.php';
                     <div class="product-controls-sm">
                         <div class="product-quantity-controls-sm">
                             <button type="button" class="dec button">-</button>
-                                <input type="number" name="food_unit" value="1" min="1"  id="message"> 
+                                <input type="number" name="food_unit" value="1" min="1" max="99" id="message"> 
                             <button type="button" class="inc button">+</button> 
                         </div> 
                         <button class="btn btn-primary" type="submit" style="margin-left: 10px;">หยิบใส่ตะกร้า</button>
@@ -94,7 +94,7 @@ require 'admin/config.php';
                     <div class="product-controls-sm">
                         <div class="product-quantity-controls-sm">
                             <button type="button" class="dec button">-</button>
-                                <input type="number" name="food_unit" value="1" min="1"  id="message"> 
+                                <input type="number" name="food_unit" value="1" min="1" max="99" id="message"> 
                             <button type="button" class="inc button">+</button> 
                         </div> 
                         <button class="btn btn-primary" type="submit" style="margin-left: 10px;">หยิบใส่ตะกร้า</button>
@@ -138,7 +138,7 @@ require 'admin/config.php';
                     <div class="product-controls-sm">
                         <div class="product-quantity-controls-sm">
                             <button type="button" class="dec button">-</button>
-                                <input type="number" name="food_unit" value="1" min="1"  id="message"> 
+                                <input type="number" name="food_unit" value="1" min="1" max="99" id="message"> 
                             <button type="button" class="inc button">+</button> 
                         </div> 
                         <button class="btn btn-primary" type="submit" style="margin-left: 10px;">หยิบใส่ตะกร้า</button>
@@ -190,7 +190,7 @@ require 'admin/config.php';
                     <div class="product-controls-sm">
                         <div class="product-quantity-controls-sm">
                             <button type="button" class="dec button">-</button>
-                                <input type="number" name="food_unit" value="1" min="1"  max="99" id="message"> 
+                                <input type="number" name="food_unit" value="1" min="1" max="99" id="message"> 
                             <button type="button" class="inc button">+</button> 
                         </div> 
                         <button class="btn btn-primary" type="submit" style="margin-left: 10px;">หยิบใส่ตะกร้า</button>
