@@ -32,10 +32,10 @@ while($rowimg=$resultimg->fetch_array(MYSQLI_ASSOC)){
         <input class="widthlogin form-control" type="text" name="username" placeholder="Username" id="username" onBlur="chkusername();"><br>
       </div>
       <div class="password">
-        <input class="widthlogin form-control" type="password" name="password" id="password" placeholder="Password" onBlur="chkpassword();" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" id="password"><br>
+        <input class="widthlogin form-control" type="password" name="password" id="password" placeholder="Password" onBlur="chkpassword();"  id="password"><br>
       </div>
       <div>
-        <button type="button" name="login" id="login_btn" class="snapLeftBtn" onClick="confirmlogin();"><span> เข้าสู่ระบบ</span></button>
+        <button type="submit" name="login" id="login_btn" class="snapLeftBtn" onClick="confirmlogin();"><span> เข้าสู่ระบบ</span></button>
       </div>
   </form>
 <script>
