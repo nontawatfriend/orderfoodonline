@@ -132,25 +132,25 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 						</a>
 					</li> -->
 					<li>
-						<a href="../admin_noodle/index.php" target="_blank" title="ออเดอร์ก๋วยเตี๋ยวฯ">
+						<a href="admin_noodle/index.php" target="_blank" title="ออเดอร์ก๋วยเตี๋ยวฯ">
 							<span><i class="fa fa-arrow-right"></i></span>
 							<span>ออเดอร์ก๋วยเตี๋ยวฯ</span>
 						</a>
 					</li>
 					<li>
-						<a href="../admin_dessert_drink/index.php" target="_blank" title="ออเดอร์ของหวานฯ">
+						<a href="admin_dessert_drink/index.php" target="_blank" title="ออเดอร์ของหวานฯ">
 							<span><i class="fa fa-arrow-right"></i></span>
 							<span>ออเดอร์ของหวานฯ</span>
 						</a>
 					</li>
 					<li>
-						<a href="../admin_hell/index.php" target="_blank" title="ออเดอร์เมนูนรก">
+						<a href="admin_hell/index.php" target="_blank" title="ออเดอร์เมนูนรก">
 							<span><i class="fa fa-arrow-right"></i></span>
 							<span>ออเดอร์เมนูนรก</span>
 						</a>
 					</li>
 					<li>
-						<a href="../admin_cashier/index.php" target="_blank" title="แผนกแคชเชียร์">
+						<a href="admin_cashier/index.php" target="_blank" title="แผนกแคชเชียร์">
 							<span><i class="fa fa-money"></i></span>
 							<span>แผนกแคชเชียร์</span>
 						</a>

@@ -1,7 +1,7 @@
-<?php include("../admin/config.php");
+<?php include("../config.php");
 session_start();
-if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
-	echo'<meta http-equiv="refresh" content="0;url=../admin/login.php">';
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" AND !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=../login.php">';
 	exit(0);
 }
 ?>
@@ -11,7 +11,7 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Admin_dessert_drink</title>
+		<title>Admin_noodle</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<?php 
@@ -19,8 +19,9 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 			$resultimg=$db->query($sqlimg);
 			while($rowimg=$resultimg->fetch_array(MYSQLI_BOTH)){
 			?>
-		<link rel="icon" href="../admin/img/<?=$rowimg["restaurant_img"]?>">
+		<link rel="icon" href="../img/<?=$rowimg["restaurant_img"]?>">
 			<?php }?>
+		<!-- <link rel="stylesheet" href="fonts/Kamit.css" > -->
 		<link rel="stylesheet" href="fonts/Mali.css">
 		<link rel="stylesheet" href="fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="css/ionicons.min.css">
@@ -36,7 +37,6 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 		<!-- สไลค์ดูภาพอุปกรณ์ -->
 		<link rel="stylesheet" href="css/jquery.fancybox.min.css" media="screen">
 		<script src="js/jquery.fancybox.min.js"></script>
-
 		<!-- เรียกใช้งาน ajax -->
 		<script language="JavaScript">
 	   	var HttPRequest = false;
@@ -83,7 +83,7 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 				}
 		}
 	</script>
-	<!-- ปิดใช้งาน ajax -->
+		
 	</head>
 	<body Onload="bodyOnload();">
 		<div class="header">
@@ -104,7 +104,7 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 		<div class="side-nav">
 			<div class="logo">
 			<i class="fa fa-tachometer">
-				<a href="index.php"></i> Admin_dessert</a>
+				<a href="index.php"></i> Admin_noodle</a>
 			</div>
 			<nav>
 				<ul>
@@ -123,7 +123,7 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 						</a>
 					</li>
 					<li <?php if($_GET['page']=="logout") echo'class="active"'?>>
-						<a href="logout.php" title="ออกจากระบบ">
+						<a href="../logout.php" title="ออกจากระบบ">
 							<span><i class="fa fa-sign-out"></i></span>
 							<span style="color: tomato;">ออกจากระบบ</span>
 						</a>

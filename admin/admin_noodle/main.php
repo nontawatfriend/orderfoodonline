@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" AND !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
 	echo'<meta http-equiv="refresh" content="0;url=../admin/login.php">';
 	exit(0);
 }
@@ -20,7 +20,7 @@ td{
     text-align: right;
 }
 </style>
-<?php include("../admin/config.php"); ?>
+<?php include("../config.php"); ?>
 <div class="title">ออร์เดอร์(ก๋วยเตี๋ยว/เกาเหลา)</div>
 <script language="JavaScript">
 

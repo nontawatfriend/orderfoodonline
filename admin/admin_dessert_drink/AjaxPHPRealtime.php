@@ -21,7 +21,7 @@
 //echo '<br>'.'<b>'."วันที่ : ".date("Y-m-d H:i:s").'</b>'.'<br>';
 /* $db = mysqli_connect("localhost","root","", "orderfoodonline") or die("Error Connect to Database");
 $db->query("set names 'utf8'"); */
-include("../admin/config.php");
+include("../config.php");
 $sqli="SELECT * from orders inner join order_list on (orders.order_id=order_list.order_id) where orders.foodstatusid_dessert_drink='1' and (order_list.food_typeid='4' or order_list.food_typeid='5') GROUP BY order_list.order_id";
 $resulti=$db->query($sqli);
 while($rowi=$resulti->fetch_array(MYSQLI_ASSOC)){?>

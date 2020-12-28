@@ -1,6 +1,6 @@
 <?php
 if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
-	echo'<meta http-equiv="refresh" content="0;url=../admin/login.php">';
+	echo'<meta http-equiv="refresh" content="0;url=../login.php">';
 	exit(0);
 }
 ?>
@@ -20,7 +20,7 @@ td{
     text-align: right;
 }
 </style>
-<?php include("../admin/config.php"); ?>
+<?php include("../config.php"); ?>
 <div class="title">ออร์เดอร์(ของหวาน/เครื่องดื่ม)</div>
 <script language="JavaScript">
 

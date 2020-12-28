@@ -1,4 +1,5 @@
 <?php
+include("../config.php");
 if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
 	echo'<meta http-equiv="refresh" content="0;url=../admin/login.php">';
 	exit(0);
@@ -11,7 +12,6 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
     text-align: right;
 }
 </style>
-<?php include("../admin/config.php"); ?>
 <div class="title">ออร์เดอร์ทั้งหมด (แคชเชียร์)</div>
 <script language="JavaScript">
 	function bodyOnload()

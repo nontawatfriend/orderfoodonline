@@ -1,5 +1,5 @@
 <?php
-include("../admin/config.php");
+include("../config.php");
 $sqli="SELECT * from orders inner join order_list on (orders.order_id=order_list.order_id) where orders.foodstatusid_hell='1' and order_list.food_typeid='6' GROUP BY order_list.order_id";
 $resulti=$db->query($sqli);
 while($rowi=$resulti->fetch_array(MYSQLI_ASSOC)){?>
