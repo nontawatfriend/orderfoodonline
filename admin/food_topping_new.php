@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=login.php">';
+	exit(0);
+} ?>
 <div class="title"><i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มท็อปปิ้ง</div><br>
 <form id="frm" method="post" class="form-horizontal" action="?page=food_topping_save" >
     <div class="form-group">

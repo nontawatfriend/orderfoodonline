@@ -1,4 +1,9 @@
 <?php
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=login.php">';
+	exit(0);
+} ?>
+<?php
 date_default_timezone_set('Asia/Bangkok');
 $today=date("Y-m-d");
 $today2=date("d/m/Y");

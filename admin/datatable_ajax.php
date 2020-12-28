@@ -12,7 +12,6 @@ while( $row = mysqli_fetch_array($result) ){
  $link=$row['tables_link'];
 echo '<div align="center">'.'<b>'.'โต๊ะที่ '.$id.' ลิ้ง => ';
 echo $link.'</b>'.'</div>'.'<br>';
-/* echo '<a href="https://www.w3schools.com" target="_blank">ไปลิ้ง</a>'; */
 echo '<div align="center">'.'<a href="'.$link.'" target="_blank" class="btn btn-primary">คลิกไปลิ้ง</a>'.'</div>';
 }
 exit(0);

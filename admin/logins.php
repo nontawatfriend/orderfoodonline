@@ -40,9 +40,8 @@ if(isset($username)){
         }else{
             $username=$row["username"];
             $password=$row["password"];
-            /* setcookie("yourusername","$username",time()+3600*24*356); */ //ตลอดเวลา
-            setcookie ("yourusername","$username",time()+30 );
-            setcookie ("yourpassword","$password",time()+30 );
+            setcookie("yourusername","$username",time()+3600*24*356); //ตลอดเวลาจนกว่าจะออกระบบ
+            setcookie("yourpassword","$username",time()+3600*24*356); //ตลอดเวลาจนกว่าจะออกระบบ
             ?>
                 <script type="text/javascript">
                     Swal.fire({

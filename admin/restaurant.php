@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=login.php">';
+	exit(0);
+} ?>
 <div class="title">&#128203; จัดการข้อมูลร้านอาหาร</div><br>
 <form id="frm" method="post" class="form-horizontal" action="?page=restaurant_edit" >
 	<div class="form-group">

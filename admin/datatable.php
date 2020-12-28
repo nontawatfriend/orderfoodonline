@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+	echo'<meta http-equiv="refresh" content="0;url=login.php">';
+	exit(0);
+} ?>
 <script src="js/bootstrap.min.js"></script> <!-- modal -->
 <style>
 th{
@@ -8,7 +13,6 @@ td{
     font-size: 18px;
 }
 </style>
-<?php include("config.php"); ?>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
