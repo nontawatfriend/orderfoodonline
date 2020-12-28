@@ -34,7 +34,7 @@ while($rowimg=$resultimg->fetch_array(MYSQLI_ASSOC)){
         <input class="widthlogin form-control" type="password" name="password" id="password" placeholder="Password" onBlur="chkpassword();" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" id="password"><br>
       </div>
       <div>
-        <button type="button" name="login" id="login_btn" onClick="confirmlogin();"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</button>
+        <button type="button" name="login" id="login_btn" class="snapLeftBtn" onClick="confirmlogin();"><span><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</span></button>
       </div>
   </form>
 <script>
@@ -79,7 +79,7 @@ function confirmlogin(){
     return false;
     }
     document.getElementById("register_form").submit();
-		$("#login_btn").html("โปรดรอสักครู่...");
+		$("#login_btn span").html("โปรดรอสักครู่...");
 		document.getElementById("login_btn").disabled = true;
 		return true;
   }
