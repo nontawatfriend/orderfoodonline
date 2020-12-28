@@ -50,7 +50,7 @@ $meQuery = $db->query($meSql);
                     <div class="product-controls-sm">
                         <div class="product-quantity-controls-sm">
                             <button type="button" class="dec button">-</button>
-                                <input type="number" value="1" min="1" name="food_unit">
+                                <input type="number" value="1" min="1" max="99" name="food_unit">
                             <button type="button" class="inc button">+</button>
                         </div>
                         <button class="btn btn-primary" type="submit" style="margin-left: 10px;">หยิบใส่ตะกร้า</button>

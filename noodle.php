@@ -98,7 +98,7 @@ require 'admin/config.php';
         <label>จำนวน :</label>
         <button type="button" class="dec button">-</button>
                 <!-- <input type="number" value="1" min="1"> -->
-                <input type="number" name="food_unit" value="1" min="1"><!--  class="form-control" style="width: 60px;text-align: center;" -->
+                <input type="number" name="food_unit" value="1" min="1" max="99"><!--  class="form-control" style="width: 60px;text-align: center;" -->
             <button type="button" class="inc button">+</button> 
         </div> 
     </div>

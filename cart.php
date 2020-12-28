@@ -208,7 +208,7 @@ $action = isset($_GET['a']) ? $_GET['a'] : "";
                         <div class="cart-quantity-controls">
                             <button type="button" class="dec button">-</button>
                                 <!-- <input type="number" value="1" min="1"> -->
-                                <input type="number" name="unit_food_<?php echo $i;?>" min="1" value="<?php echo $_SESSION["strfoodunit"][$i] ?>">
+                                <input type="number" name="unit_food_<?php echo $i;?>" min="1" max="99" value="<?php echo $_SESSION["strfoodunit"][$i] ?>">
                                 <!--  class="form-control" style="width: 60px;text-align: center;" -->
                             <button type="button" class="inc button">+</button> 
                         </div>
