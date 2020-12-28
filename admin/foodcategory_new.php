@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" OR !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
+if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["password"] =="" and !isset($_COOKIE["yourusername"]) || $_COOKIE["yourusername"] =="" || $_COOKIE["yourpassword"] ==""){
 	echo'<meta http-equiv="refresh" content="0;url=login.php">';
 	exit(0);
 } ?>
