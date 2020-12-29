@@ -191,7 +191,6 @@ input[type="radio"]:disabled + .label-text:before{
         </div>
         <br>
         <br>
-        <br>
         <button type="button" class="btn btn-primary" onClick="Submit();" id="buttontext" >เพิ่มลงตะกร้า</button>
     </form>
 </div>
