@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 }
 hr{
+	margin-top: 1px;
 	border: 1;
 	height: 1px;
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(1, 1, 1, 0.08), rgba(0, 0, 0, 0));
@@ -454,7 +455,36 @@ h1 {
 		font-size: 18px;
 	}
 	/* ปิด Cart */
+
+	.checkbox-inline, 
+    .radio-inline{
+		position: relative;
+		display: flex;
+		padding-left: 10px;
+		margin-bottom: 0;
+		margin-left: 10px;
+		font-weight: 400;
+		vertical-align: middle;
+		cursor: pointer;
+		justify-content: space-between; /* ขยับแยกชิดขอบ */
+	}
+	.bath{
+		padding-right: 20px;
+	}
 @media screen and (min-width: 600px) {
+	.checkbox-inline, 
+    .radio-inline{
+    position: relative;
+    display: flex;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+    .bath{
+        display: inline-block;
+    }
 	/* tablet */
 
 	/* Cart */
@@ -594,6 +624,19 @@ h1 {
 	}
 }
 @media screen and (min-width: 800px) {
+	.checkbox-inline, 
+    .radio-inline{
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+    .bath{
+        display: none;
+    }
 	.cart-action-button .sum{
 		margin-bottom: 0.1rem;
     	/* border-left-width: 10px; */

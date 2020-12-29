@@ -17,7 +17,7 @@ if(!isset($_SESSION["username"]) || $_SESSION["username"] =="" || $_SESSION["pas
 	function bodyOnload()
 	{
 		doCallAjax('order_id')
-		setTimeout("doLoop();",2000); /* 2วิ */
+		setTimeout("doLoop();",60000); /* 2000 เท่ากับ 2วิ 60000 เท่ากับ 60วิ*/
 	}
 
 	function doLoop()
