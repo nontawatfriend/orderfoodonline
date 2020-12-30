@@ -3,9 +3,10 @@ if($_GET["id_table"]!=""){ //มีหมายเลขโต๊ะ
   session_start ();  
   $_SESSION["id_table"]=base64_decode($_GET["id_table"]); //รับเข้ารหัสมาแปลงเป็นตัวเลขเป็นปกติ
   unset($_SESSION["timeLasetdActive"]);//มีหมายเขโต๊ะมาให้เริ่มนับเวลา session ใหม่
+  echo '<meta http-equiv="refresh"content="0;url=index.php">'; //รับไอดีโต๊ะแล้วให้มันกลับไปหน้า index
 }else
 session_start ();
-    $sessionlifetime = 900; //กำหนดเป็นวินาที 900 เท่ากับ 15นาที
+    $sessionlifetime = 900; //กำหนดเป็นวินาที 900 วิ เท่ากับ 15นาที
     if(isset($_SESSION["timeLasetdActive"])){
       $seclogin = (time()-(int)$_SESSION["timeLasetdActive"]);
         if($seclogin>$sessionlifetime){
