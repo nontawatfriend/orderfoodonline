@@ -60,7 +60,7 @@ if($_POST["id_table"]==$rowSelect["table_id"] and $rowSelect["food_statusid"]=='
         unset( $_SESSION["strtypeID"]);
         $_SESSION["sumcart"]=0;
 
-        $sqlSelectq="SELECT food_statusid from orders where food_statusid='1'";/* ตรวจสถานะที่เท่ากับ 1 คือยังไม่ได้รับอาหาร */
+        $sqlSelectq="SELECT * from orders where (food_statusid='1' OR foodstatusid_dessert_drink='1' OR foodstatusid_hell='1') and order_id<='$orderID'";/* ตรวจสถานะที่เท่ากับ 1 คือยังไม่ได้รับอาหาร */
         $result=$db->query($sqlSelectq);
         $recordQ=mysqli_num_rows($result);
         $Q=$recordQ-1;
@@ -116,7 +116,7 @@ if($_POST["id_table"]==$rowSelect["table_id"] and $rowSelect["food_statusid"]=='
         unset( $_SESSION["strfoodprice"]);
         unset( $_SESSION["strtypeID"]);
         $_SESSION["sumcart"]=0;
-        $sqlSelectq="SELECT food_statusid from orders where food_statusid='1'";/* ตรวจสถานะที่เท่ากับ 1 คือยังไม่ได้รับอาหาร */
+        $sqlSelectq="SELECT * from orders where (food_statusid='1' OR foodstatusid_dessert_drink='1' OR foodstatusid_hell='1')";/* ตรวจสถานะที่เท่ากับ 1 คือยังไม่ได้รับอาหาร */
         $result=$db->query($sqlSelectq);
         $recordQ=mysqli_num_rows($result);
         $Q=$recordQ-1;
