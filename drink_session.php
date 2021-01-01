@@ -8,9 +8,9 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     $_SESSION["strfoodprice"][0] = $_POST['food_price']; //ราคารายการ
     $_SESSION["strtypeID"][0] = $_POST['foodtype_id']; //ไอดีประเภทอาหาร
     $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-    $message = "เพิ่มรายการแล้ว";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    echo '<meta http-equiv="refresh"content="0;url=?page=drink">';
+    //$message = "เพิ่มรายการแล้ว";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo '<meta http-equiv="refresh"content="0;url=?page=drink">';
 }else {
     $key = array_search($_POST["food_name"], $_SESSION["strfoodname"]);//ค้นหา คำที่เหมือน ใน array
     if((string)$key == ""){
@@ -24,16 +24,16 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
         $_SESSION["strfoodprice"][$intNewLine] = $_POST['food_price']; //ราคารายการ
         $_SESSION["strtypeID"][$intNewLine] = $_POST['foodtype_id']; //ไอดีประเภทอาหาร
         $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-        $message = "เพิ่มรายการแล้ว";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        echo '<meta http-equiv="refresh"content="0;url=?page=drink">';        
+        //$message = "เพิ่มรายการแล้ว";
+        //echo "<script type='text/javascript'>alert('$message');</script>";
+        //echo '<meta http-equiv="refresh"content="0;url=?page=drink">';        
     }else{
         //มีค่าเดิม ทำการบวกจำนวนเพิ่มใน session
         $_SESSION["strfoodunit"][$key] = $_POST['food_unit'] + $_SESSION["strfoodunit"][$key];
         $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-        $message = "เพิ่มจำนวนแล้ว";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        echo '<meta http-equiv="refresh"content="0;url=?page=drink">';          
+        //$message = "เพิ่มจำนวนแล้ว";
+        //echo "<script type='text/javascript'>alert('$message');</script>";
+        //echo '<meta http-equiv="refresh"content="0;url=?page=drink">';          
     }    
 }
 

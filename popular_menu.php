@@ -31,7 +31,7 @@ require 'admin/config.php';
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){  
             ?>
             <div class="product-item">
-                <form action="?page=popular_menu_session" method="post">
+                <form action="?page=popular_menu_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                 <!-- <input type="hidden" name="food_price" value="<?=$row["food_price"]?>"> -->
                     <div class="product-product">
@@ -76,7 +76,7 @@ require 'admin/config.php';
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){  
             ?>
             <div class="product-item">
-                <form action="?page=popular_menu_session" method="post">
+                <form action="?page=popular_menu_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                     <div class="product-product">
                         <a class="fancybox img-thumbnail" title="<?=$row['food_name'];?>" rel="ligthbox" href="admin/img/<?=$row['food_img'];?>">
@@ -120,7 +120,7 @@ require 'admin/config.php';
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){  
             ?>
             <div class="product-item">
-                <form action="?page=popular_menu_session" method="post">
+                <form action="?page=popular_menu_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                     <div class="product-product">
                         <a class="fancybox img-thumbnail" title="<?=$row['food_name'];?>" rel="ligthbox" href="admin/img/<?=$row['food_img'];?>">
@@ -164,7 +164,7 @@ require 'admin/config.php';
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){  
             ?>
             <div class="product-item">
-                <form action="?page=popular_menu_session" method="post">
+                <form action="?page=popular_menu_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                     <div class="product-product">
                     <?php 
@@ -201,3 +201,16 @@ require 'admin/config.php';
         </div>
     </div>
 </div>
+<script> 
+        $(document).ready(function() { 
+            $('.myForm').ajaxForm(function() { 
+                $.ajax({
+                       type : "POST",
+					   url: "session.php",
+                       data : {},
+					   success: function(result) {
+					   }
+					 });
+            }); 
+        }); 
+</script>

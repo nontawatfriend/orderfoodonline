@@ -96,7 +96,7 @@ input[type="radio"]:disabled + .label-text:before{
 <h3 align="center"><b>หมวดหมู่ก๋วยเตี๋ยว</b></h3>
 <hr>
 <div align="center">
-    <form action="?page=noodle_session" method="POST" id="formsession">
+    <form action="?page=noodle_session" method="POST" id="formsession" class="myForm">
         <h4 style="font-weight: bold;">เส้น</h4>
             <?php 
             $sql="select * from food where foodtype_id=3 and food_flag=1 order by food_id ASC";
@@ -191,14 +191,58 @@ input[type="radio"]:disabled + .label-text:before{
         </div>
         <br>
         <br>
-        <button type="button" class="btn btn-primary" onClick="Submit();" id="buttontext" >เพิ่มลงตะกร้า</button>
+        <button type="submit" class="btn btn-primary" id="buttontext" >เพิ่มลงตะกร้า</button>
     </form>
 </div>
 <script>
-    function Submit(){
+/* $(document).ready(function(){
+    $('input[type="submit"]').attr('disabled','disabled');
+    $('input[type="text"]').change(function(){
+        if($(this).val != ''){
+            $('input[type="submit"]').removeAttr('disabled');
+        }
+    });
+}); */
+    /* function Submit(){
 		document.getElementById("formsession").submit();
 		$("#buttontext").html("โปรดรอสักครู่...");
 		document.getElementById("buttontext").disabled=true;
 		return true;
-	}
+	} */
+</script>
+<script> 
+$(document).ready(function() { 
+    $('.myForm').ajaxForm(function() { 
+    //document.getElementById("buttontext").disabled=true;
+    //$("#buttontext").html("โปรดรอสักครู่...");
+        alert("เพิ่มรายการแล้ว");
+        $.ajax({
+            type : "POST",
+            url: "noodle_session.php",
+            data : {},
+            success: function(result) {
+                //document.getElementById("buttontext").disabled=false;
+                //$("#buttontext").html("เพิ่มลงตะกร้า");
+            }
+        });
+    }); 
+}); 
+/* $("#formsession").submit( function() {
+    document.getElementById("buttontext").disabled=true;
+    $("#buttontext").html("โปรดรอสักครู่...");
+});
+        $(document).ready(function() { 
+            $('.myForm').ajaxForm(function() { 
+                $.ajax({
+                       type : "POST",
+					   url: "noodle_session.php",
+                       data : {},
+					   success: function(result) {
+                            alert("เพิ่มรายการแล้ว");
+                            document.getElementById("buttontext").disabled=false;
+                            $("#buttontext").html("เพิ่มลงตะกร้า");
+					   }
+				});
+            }); 
+        });  */
 </script>

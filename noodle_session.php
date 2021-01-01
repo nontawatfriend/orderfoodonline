@@ -29,9 +29,9 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     $_SESSION["strfoodunit"][0] = $_POST['food_unit']; //จำนวนที่สั่ง
     $_SESSION["strDetail"][0] = $_POST['food_note']; // รายละเอียดที่กรอก
     $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-    $message = "เพิ่มรายการแล้ว";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    echo '<meta http-equiv="refresh"content="0;url=?page=noodle">';
+    //$message = "เพิ่มรายการแล้ว";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo '<meta http-equiv="refresh"content="0;url=?page=noodle">';
 }else {
     $_SESSION["intLine"] = $_SESSION["intLine"] + 1;
     $intNewLine  = $_SESSION["intLine"];
@@ -53,8 +53,8 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     $_SESSION["strfoodunit"][$intNewLine] = $_POST['food_unit']; //จำนวนที่สั่ง
     $_SESSION["strDetail"][$intNewLine] = $_POST['food_note']; // รายละเอียดที่กรอก
     $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-    $message = "เพิ่มรายการแล้ว";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    echo '<meta http-equiv="refresh"content="0;url=?page=noodle">';
+    //$message = "เพิ่มรายการแล้ว";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo '<meta http-equiv="refresh"content="0;url=?page=noodle">';
 }
 ?>

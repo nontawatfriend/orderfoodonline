@@ -263,7 +263,7 @@ $_SESSION["sumcart"]=$sumcart;
 <script>
     function Submit(){
 		document.getElementById("frmsave").submit();
-		$("#buttontext").html("ระบบกำลังทำการโปรดรอสักครู่.....");
+		$("#buttontext").html("โปรดรอสักครู่...");
 		document.getElementById("buttontext").disabled = true;
 		return true;
 	}

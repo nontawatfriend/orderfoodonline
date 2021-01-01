@@ -6,7 +6,7 @@ $meSql = "SELECT * FROM food where food_recommend='1' ORDER BY foodtype_id ASC";
 $meQuery = $db->query($meSql);
 $num=mysqli_num_rows($meQuery);
 
-?>
+?> 
 <hr>
 <h3 align="center"><b>หมวดหมู่เมนูแนะนำ</b></h3>
 <hr>
@@ -20,7 +20,7 @@ if($num>0){?>
                     while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){
                 ?>
                 <div class="product-item">
-                <form action="?page=recommended_menu_session" method="POST">
+                <form action="?page=recommended_menu_session" method="POST" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                         <div class="product-product">
                         <?php 
@@ -63,3 +63,16 @@ if($num>0){?>
     echo "<div class=\"alert alert-warning\" align='center'>ยังไม่มีเมนูแนะนำ</div>";
 }
 ?>
+<script> 
+        $(document).ready(function() { 
+            $('.myForm').ajaxForm(function() { 
+                $.ajax({
+                       type : "POST",
+					   url: "session.php",
+                       data : {},
+					   success: function(result) {
+					   }
+					 });
+            }); 
+        }); 
+</script>

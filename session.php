@@ -8,11 +8,8 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     $_SESSION["strfoodprice"][0] = $_POST['food_price']; //ราคารายการ
     $_SESSION["strtypeID"][0] = $_POST['foodtype_id']; //ไอดีประเภทอาหาร
     $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-    //$message = "เพิ่มรายการแล้ว";
-    //echo "<script type='text/javascript'>alert('$message');</script>";
-    //echo '<meta http-equiv="refresh"content="0;url=?page=hell_menu">';
 }else {
-    $key = array_search($_POST["food_name"], $_SESSION["strfoodname"]);//ค้นหา คำที่เหมือน ใน array
+    $key = array_search($_POST["food_name"], $_SESSION["strfoodname"]); //ค้นหา คำที่เหมือน ใน array
     if((string)$key == ""){
         //ไม่มีค่า ทำการเพิ่มรายการใหม่ใน session
         $_SESSION["intLine"] = $_SESSION["intLine"] + 1;
@@ -23,20 +20,11 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
         $_SESSION["strfoodunit"][$intNewLine] = $_POST['food_unit']; //จำนวนรายการ
         $_SESSION["strfoodprice"][$intNewLine] = $_POST['food_price']; //ราคารายการ
         $_SESSION["strtypeID"][$intNewLine] = $_POST['foodtype_id']; //ไอดีประเภทอาหาร
-        $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-        //$message = "เพิ่มรายการแล้ว";
-        //echo "<script type='text/javascript'>alert('$message');</script>";
-        //echo '<meta http-equiv="refresh"content="0;url=?page=hell_menu">';        
+        $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า      
     }else{
         //มีค่าเดิม ทำการบวกจำนวนเพิ่มใน session
         $_SESSION["strfoodunit"][$key] = $_POST['food_unit'] + $_SESSION["strfoodunit"][$key];
-        $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-        //$message = "เพิ่มจำนวนแล้ว";
-        //echo "<script type='text/javascript'>alert('$message');</script>";
-        //echo '<meta http-equiv="refresh"content="0;url=?page=hell_menu">';          
+        $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า        
     }    
 }
-
-
-
 ?>

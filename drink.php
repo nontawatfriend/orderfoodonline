@@ -23,7 +23,7 @@ $meQuery = $db->query($meSql);
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){
             ?>
             <div class="product-item">
-                <form action="?page=drink_session" method="post">
+                <form action="?page=drink_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                     <div class="product-product">
                        <!--  <div class="product-image" style="background-image:url(admin/img/<?php echo $row["food_img"];?>)"></div> -->
@@ -65,3 +65,19 @@ $meQuery = $db->query($meSql);
         </div>
     </div>
 </div>
+<script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('.myForm').ajaxForm(function() { 
+                //alert("Thank you for your comment!"); 
+                $.ajax({
+                       type : "POST",
+					   url: "session.php",
+                       data : {},
+					   success: function(result) {
+					   }
+					 });
+            }); 
+        }); 
+</script>

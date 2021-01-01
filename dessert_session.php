@@ -1,5 +1,6 @@
 <?php
 session_start();
+//header('Content-Type: application/json');
 if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     $_SESSION["intLine"]=0;
     $_SESSION["strfoodid"][0]=$_POST['food_id']; //ไอดีรายการ
@@ -8,9 +9,13 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
     $_SESSION["strfoodprice"][0]=$_POST['food_price']; //ราคารายการ
     $_SESSION["strtypeID"][0]=$_POST['foodtype_id']; //ไอดีประเภทอาหาร
     $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-    $message="เพิ่มรายการแล้ว";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    echo '<meta http-equiv="refresh"content="0;url=?page=dessert">';
+    //$message="เพิ่มรายการแล้ว";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo json_encode(array('status' => '1','message1'=> 'เพิ่มรายการแล้ว'));
+    //$message = [ 'message' => 'เพิ่มรายการแล้ว' ];
+    //echo json_encode($message);
+    //exit(0);
+    //echo '<meta http-equiv="refresh"content="0;url=?page=dessert">';
 }else {
     $key = array_search($_POST["food_name"], $_SESSION["strfoodname"]);//ค้นหา คำที่เหมือน ใน array
     if((string)$key == ""){
@@ -24,16 +29,24 @@ if(!isset($_SESSION["intLine"])){ //ยังไม่มีข้อมูล
         $_SESSION["strfoodprice"][$intNewLine]=$_POST['food_price']; //ราคารายการ
         $_SESSION["strtypeID"][$intNewLine]=$_POST['foodtype_id']; //ไอดีประเภทอาหาร
         $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-        $message="เพิ่มรายการแล้ว";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        echo '<meta http-equiv="refresh"content="0;url=?page=dessert">';        
+        //$message="เพิ่มรายการแล้ว";
+        //echo "<script type='text/javascript'>alert('$message');</script>";
+        //echo json_encode(array('status' => '2','message2'=> 'เพิ่มรายการแล้ว'));
+        //$message = [ 'message' => 'เพิ่มรายการแล้ว' ];
+        //echo json_encode($message);
+        //exit(0);
+        //echo '<meta http-equiv="refresh"content="0;url=?page=dessert">';        
     }else{
         //มีค่าเดิม ทำการบวกจำนวนเพิ่มใน session
         $_SESSION["strfoodunit"][$key] = $_POST['food_unit']+$_SESSION["strfoodunit"][$key];
         $_SESSION["sumcart"]=$_SESSION["sumcart"]+$_POST['food_unit']; //ทำการบวกกับตระกร้าเข้าไป เท่ากับ ผลลัพธ์ทั้งหมดในตะกร้า
-        $message = "เพิ่มจำนวนแล้ว";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        echo '<meta http-equiv="refresh"content="0;url=?page=dessert">';          
+        //$message = "เพิ่มจำนวนแล้ว";
+        //echo "<script type='text/javascript'>alert('$message');</script>";
+        ///echo json_encode(array('status' => '3','message3'=> 'เพิ่มจำนวนแล้ว'));
+        //$message = [ 'message' => 'เพิ่มจำนวนแล้ว' ];
+        //echo json_encode($message);
+        //exit(0);
+        //echo '<meta http-equiv="refresh"content="0;url=?page=dessert">';          
     }    
 }
 ?>

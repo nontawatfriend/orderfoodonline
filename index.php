@@ -46,6 +46,9 @@ session_start ();
     <!-- ที่สไลค์หมวดหมู่ -->
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    <!-- js เวลาส่ง form ไปไม่ใลิ้งไปหน้าถัดให้มัน ส่งแบบ ajax -->
+    <script src="js/jquery.form.js"></script> 
 
     <script>
     $( function() {
@@ -166,7 +169,7 @@ if($rowtableid == $_SESSION["id_table"]){
       </div><!-- ปิด main-content -->
   <div class="cart-fixed">
     <div class="cart">
-        <a href="?page=cart" class="btn btn-warning"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ตะกร้า <span class="badge badge-light"><?php echo $_SESSION["sumcart"] ?></span></a>
+        <a href="?page=cart" class="btn btn-warning"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ตะกร้า <span class="badge badge-light" id="unit"><?php echo $_SESSION["sumcart"];?></span></a>
     </div>
   </div>
   </div>
@@ -390,6 +393,24 @@ if($rowtableid == $_SESSION["id_table"]){
   });
   </script>
   <!-- ปิดปุ่มเพิ่มลบจำนวน -->
+  <!-- แสดงจำนวนตระกร้าแบบ ajax -->
+  <script type="text/javascript">
+    $(function(){
+        setInterval(function(){ // เขียนฟังก์ชัน javascript ให้ทำงานทุก ๆ 30 วินาที
+            // 1 วินาที่ เท่า 1000
+            // คำสั่งที่ต้องการให้ทำงาน ทุก ๆ 3 วินาที
+            var getData=$.ajax({ // ใช้ ajax ด้วย jQuery ดึงข้อมูลจากฐานข้อมูล
+                    url:"gdata.php",
+                    data:"rev=1",
+                    async:false,
+                    success:function(getData){
+                        $("span#unit").html(getData); // ส่วนที่ 3 นำข้อมูลมาแสดง
+                    }
+            }).responseText;
+        },1500);    
+    });
+  </script>
+    <!-- ปิดแสดงจำนวนตระกร้าแบบ ajax -->
   </html>
   <?php   
   }

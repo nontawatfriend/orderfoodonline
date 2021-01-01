@@ -1,10 +1,8 @@
 <?php
 session_start();
 require 'admin/config.php';
-
 $meSql = "SELECT * FROM food where foodtype_id='4'";
 $meQuery = $db->query($meSql);
-
 ?>
 <hr>
 <h3 align="center"><b>หมวดหมู่ของหวาน</b></h3>
@@ -17,7 +15,7 @@ $meQuery = $db->query($meSql);
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){
             ?>
             <div class="product-item">
-                <form action="?page=dessert_session" method="post">
+                <form action="?page=dessert_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                 <!-- <input type="hidden" name="food_price" value="<?=$row["food_price"]?>"> -->
                     <div class="product-product">
@@ -52,10 +50,37 @@ $meQuery = $db->query($meSql);
                 </form>
             </div>
             <?php } ?>
-
         </div>
     </div>
 </div>
-<?php
-
-?>
+<script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('.myForm').ajaxForm(function() { 
+                //alert("Thank you for your comment!"); 
+                $.ajax({
+                       type : "POST",
+					   url: "session.php",
+					   /* data: $("").serialize(), */
+                       data : {},
+					   success: function(result) {
+							//alert(result.message); 
+                            /* if(result.status == 1) // Success
+							{
+								alert(result.message1); 
+							}
+							else if(result.status == 2) // Err
+							{
+								alert(result.message2);
+							}else if(result.status == 3)
+							{
+								alert(result.message3);
+							}else{
+                                alert("---"); 
+                            } */
+					   }
+					 });
+            }); 
+        }); 
+</script>

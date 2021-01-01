@@ -23,7 +23,7 @@ $meQuery = $db->query($meSql);
                 while ($row=$meQuery->fetch_array(MYSQLI_BOTH)){
             ?>
             <div class="product-item">
-                <form action="?page=hell_menu_session" method="post">
+                <form action="?page=hell_menu_session" method="post" class="myForm">
                 <input type="hidden" name="food_name" value="<?=$row["food_name"]?>">
                     <div class="product-product">
                         <!-- <div class="product-image" style="background-image:url(admin/img/<?php echo $row["food_img"];?>)"></div> -->
@@ -61,3 +61,16 @@ $meQuery = $db->query($meSql);
         </div>
     </div>
 </div>
+<script> 
+        $(document).ready(function() { 
+            $('.myForm').ajaxForm(function() { 
+                $.ajax({
+                       type : "POST",
+					   url: "session.php",
+                       data : {},
+					   success: function(result) {
+					   }
+					 });
+            }); 
+        }); 
+</script>
