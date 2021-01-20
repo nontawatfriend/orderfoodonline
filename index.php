@@ -2,8 +2,8 @@
 if($_GET["id_table"]!=""){ //มีหมายเลขโต๊ะ
   session_start ();  
   $_SESSION["id_table"]=base64_decode($_GET["id_table"]); //รับเข้ารหัสมาแปลงเป็นตัวเลขเป็นปกติ
-  unset($_SESSION["timeLasetdActive"]);//มีหมายเขโต๊ะมาให้เริ่มนับเวลา session ใหม่
-  echo '<meta http-equiv="refresh"content="0;url=index.php">'; //รับไอดีโต๊ะแล้วให้มันกลับไปหน้า index
+  unset($_SESSION["timeLasetdActive"]);//มีหมายเลขโต๊ะมาให้เริ่มนับเวลา session ใหม่
+  echo '<meta http-equiv="refresh"content="0;url=?page=noodle">'; //รับไอดีโต๊ะแล้วให้มันกลับไปหน้า index
 }else
 session_start ();
     $sessionlifetime = 900; //กำหนดเป็นวินาที 900 วิ เท่ากับ 15นาที
@@ -100,48 +100,48 @@ if($rowtableid == $_SESSION["id_table"]){
                           <a href="#<?php echo $row["foodtype_id"] ?>" aria-controls="<?php echo $row["foodtype_name"] ?>" role="tab" data-toggle="tab"><?php echo $row["foodtype_name"] ?>
                           </a>
                       </li> -->
-                    <!-- <?php if($_GET['page']=="index") echo'class="active"'?> -->
+                    <!-- <?php if($_GET['page']=="index") echo 'class="active"'?> -->
                     <?php 
                       if($row["foodtype_status"]=="1"){
                         if($row["foodtype_id"]=="1"){ ?>
                         <!-- <?php if(!$_GET) $_GET['page']="recommended_menu"?> -->
-                          <li <?php if ($_GET['page']=="recommended_menu") echo'class="active"' ?>>
+                          <li <?php if ($_GET['page']=="recommended_menu") echo 'class="active"' ?>>
                               <a href="index.php?page=recommended_menu"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
                         <?php } 
                         if($row["foodtype_id"]=="2"){ ?>
-                          <li <?php if($_GET['page']=="popular_menu") echo'class="active"'?>>
+                          <li <?php if($_GET['page']=="popular_menu") echo 'class="active"'?>>
                               <a href="index.php?page=popular_menu"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
                           <?php } 
                           if($row["foodtype_id"]=="3"){ ?>
-                          <li <?php if($_GET['page']=="noodle") echo'class="active"'?>>
+                          <li <?php if($_GET['page']=="noodle") echo 'class="active"'?>>
                               <a href="index.php?page=noodle"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
                           <?php } 
                           if($row["foodtype_id"]=="4"){ ?>
-                          <li <?php if($_GET['page']=="dessert") echo'class="active"'?>>
+                          <li <?php if($_GET['page']=="dessert") echo 'class="active"'?>>
                               <a href="index.php?page=dessert"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
                           <?php } 
                           if($row["foodtype_id"]=="5"){ ?>
-                          <li <?php if($_GET['page']=="drink") echo'class="active"'?>>
+                          <li <?php if($_GET['page']=="drink") echo 'class="active"'?>>
                               <a href="index.php?page=drink"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
                           <?php } 
                           if($row["foodtype_id"]=="6"){ ?>
-                          <li <?php if($_GET['page']=="hell_menu") echo'class="active"'?>>
+                          <li <?php if($_GET['page']=="hell_menu") echo 'class="active"'?>>
                               <a href="index.php?page=hell_menu"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
                           <?php } 
                           if($row["foodtype_id"]=="7"){ ?>
-                          <li <?php if($_GET['page']=="chinese_soup") echo'class="active"'?>>
+                          <li <?php if($_GET['page']=="chinese_soup") echo 'class="active"'?>>
                               <a href="index.php?page=chinese_soup"><?php echo $row["foodtype_name"] ?>
                               </a>
                           </li>
@@ -163,7 +163,7 @@ if($rowtableid == $_SESSION["id_table"]){
             }
             else{
               $_SESSION["id_table"]=base64_decode($_GET["id_table"]); //แปลงและรับไอดีโต๊ะ
-              require_once("recommended_menu.php");
+              require_once("noodle.php");
             }
           ?>
       </div><!-- ปิด main-content -->

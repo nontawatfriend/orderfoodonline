@@ -2,7 +2,7 @@
 session_start();
 require 'admin/config.php';
 
-$meSql = "SELECT * FROM food where food_recommend='1' ORDER BY foodtype_id ASC";
+$meSql = "SELECT * FROM food where food_recommend='1' ORDER BY foodtype_id DESC";
 $meQuery = $db->query($meSql);
 $num=mysqli_num_rows($meQuery);
 

@@ -22,7 +22,7 @@
 /* $db = mysqli_connect("localhost","root","", "orderfoodonline") or die("Error Connect to Database");
 $db->query("set names 'utf8'"); */
 include("../config.php");
-$sqli="SELECT * from orders inner join order_list on (orders.order_id=order_list.order_id) where orders.foodstatusid_dessert_drink='1' and (order_list.food_typeid='4' or order_list.food_typeid='5') GROUP BY order_list.order_id";
+$sqli="SELECT * from orders inner join order_list on (orders.order_id=order_list.order_id) where (orders.foodstatusid_dessert_drink='1' or orders.foodstatusid_dessert_drink='2') and order_list.food_statusid='1' and (order_list.food_typeid='4' or order_list.food_typeid='5') GROUP BY order_list.order_id";
 $resulti=$db->query($sqli);
 while($rowi=$resulti->fetch_array(MYSQLI_ASSOC)){?>
     <h4 class="page-banner-sm"><b>โต๊ะที่ <?php echo $rowi["table_id"]?></b></h4>

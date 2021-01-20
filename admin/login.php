@@ -27,18 +27,20 @@ while($rowimg=$resultimg->fetch_array(MYSQLI_ASSOC)){
   <form id="register_form" method="post" action="logins.php" class="form-horizontal">
   <img src="img/<?=$rowimg["restaurant_img"]?>" alt="<?=$rowimg['restaurant_name'];?>" class="img-rounded" height="auto" width="240px">
 <?php }?>
-	  <h1>ล็อกอิน</h1>
+	  <h1>เข้าสู่ระบบ</h1>
       <div class="username">
-        <input class="widthlogin form-control" type="text" name="username" placeholder="Username" id="username" onBlur="chkusername();"><br>
+	  <label for="">ผู้ใช้งาน :</label>
+        <input class="widthlogin form-control" type="text" name="username" placeholder="" id="username" onBlur="chkusername();"><br>
       </div>
       <div class="password">
-        <input class="widthlogin form-control" type="password" name="password" id="password" placeholder="Password" onBlur="chkpassword();"  id="password"><br>
+	  <label for="">รหัสผ่าน :</label>
+        <input class="widthlogin form-control" type="password" name="password" id="password" placeholder="" onBlur="chkpassword();"  id="password"><br>
 	  </div>
-	  			<div class="form-check">
-					<label>
-						<input type="checkbox" name="check"> <span class="label-text">ให้อยู่ในระบบต่อไป</span>
-					</label>
-				</div>
+			<div class="form-check">
+				<label>
+					<input type="checkbox" name="check"> <span class="label-text">ให้อยู่ในระบบต่อไป</span>
+				</label>
+			</div>
       <div>
         <button type="submit" name="login" id="login_btn" class="snapLeftBtn" onClick="confirmlogin();"><span> เข้าสู่ระบบ</span></button>
       </div>
